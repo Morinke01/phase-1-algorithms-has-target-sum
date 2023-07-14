@@ -1,6 +1,26 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
-}
+    // Create an empty set to store encountered numbers
+    const numSet = new Set();
+  
+    // Iterate through each number in the array
+    for (let num of array) {
+      // Calculate the difference between the target and the current number
+      const difference = target - num;
+  
+      // If the difference exists in the set, a pair is found
+      if (numSet.has(difference)) {
+        return true;
+      }
+  
+      // Add the current number to the set
+      numSet.add(num);
+    }
+  
+    // No pair found, return false
+    return false;
+  }
+  
 
 /* 
   Write the Big O time complexity of your function here
